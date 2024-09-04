@@ -55,13 +55,6 @@ def setup_auth():
     except subprocess.CalledProcessError as e:
         print(f"Failed to authenticate to Azure: {e}")
 
-    try:
-        # Authenticate in Google
-        subprocess.run(['gcloud', 'auth', 'configure-docker', f'{google_region}-docker.pkg.dev', '--quiet'], check=True)
-        print("Authenticated to Google Cloud successfully.")
-    except subprocess.CalledProcessError as e:
-        print(f"Failed to authenticate to Google: {e}")
-
 
 # GitOps files directory
 directory_path = '/Users/jportal/Documents/GitHub/kubernetes-gitops/'
